@@ -1,0 +1,33 @@
+.header
+	position: sticky
+	top: 50%
+	left: 0px  
+	// top: 0 
+	
+	display: flex
+	flex-direction: row
+	margin: 0 24px  
+	z-index: 1 
+	align-items: baseline
+	// &>*
+	// 	outline: 1px solid red
+	&__logo
+		+grid(2)
+		align-self: center
+	&__text
+		+grid(2)
+		line-height: 2 
+
+	&__cv
+		margin-left: auto 
+		// padding: 20px 
+		display: block
+		// align-items: baseline
+		border: 1px solid red 
+		width: getGrid(2) 
+		text-align: center
+		// height: 40px 
+		// line-height: 40px 
+		padding: 40px 0
+		text-decoration: none
+		color: $text 

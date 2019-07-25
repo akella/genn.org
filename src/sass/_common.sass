@@ -1,0 +1,21 @@
++font(dax,'DaxlineWebPro')
+$bg: #f3f3f3
+$text: #1d0b25
+
+=grid($n)
+	width: 8.33%*$n
+	padding-right: 16px  
+@function getGrid($n)
+	@return 8.33%*$n
+	
+
+body
+	background: $bg
+	// font-size: 200px
+	// +css-lock(16, 50, 600, 1000)
+	line-height: 1.4
+	font-family: dax,sans-serif 
+	color: $text 
+
+a
+	color: #0000ff 

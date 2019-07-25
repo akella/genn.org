@@ -1,0 +1,72 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin header -->
+<div class="header">
+	<div class="header__logo">
+		<img src="/img/genn.svg" width="84" alt="">
+	</div>
+	<div class="header__text">
+		Hello, I am Genn<br />
+		<a href="mailto:yo@genn.org">yo@genn.org</a><br />
+		+1 (415) 570-8911
+	</div>
+
+	<a href="#" class="header__cv">
+		Download CV in PDF
+	</a>
+</div>
+<!-- end header -->
+
+<!-- begin hello -->
+<section class="hello">
+	<div class="hello__text">
+		<p>Product Designer,<br> UX protagonist, <br>Master of Computer Sciences</p>
+	</div>
+	<div class="hello__arrow"><img src="/img/arrow.svg" width="53" alt=""></div>
+</section>
+<!-- end hello -->
+
+<!-- begin skills -->
+<section class="skills">
+	<div class="skills__list">
+		<ul>
+			<li><span>Product Design</span></li>
+			<li><span>UX/UI Design</span></li>
+			<li><span>Design Systems</span></li>
+			<li><span>Art Direction</span></li>
+			<li><span>User Research</span></li>
+			<li><span>Brand Identity</span></li>
+		</ul>
+	</div>
+	<div class="skills__text">
+		<p>Usually, I join a project at the very beginning or the moment help is needed the most. It doesn’t matter if I start from scratch or have a working solution to support. I build a strong product as a mixture of design, technology, strategy, research and deep understanding of the underlying process.<br>
+		I don’t just solve usability tasks. I solve business tasks making the product the most usable the way the business needs it to be.</p>
+	</div>
+</section>
+<!-- end skills -->
+
+
+<!-- begin footer -->
+<div class="footer">
+	<p>Also <a href="#">check my Linkedin</a>, it is up to date</p>
+</div>
+<!-- end footer -->
+	
+	
+	<!-- {% include "partials/_header.html" %} -->
+
+
+	<!-- {# data usage example #}
+		{% import "data/data.html" as tests %}
+		
+		{% for test in tests.list %}
+		<li>{{test.title}}</li>
+		{% endfor %}
+	{# end of example #} -->
+
+{% endblock %}
