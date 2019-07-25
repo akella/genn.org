@@ -1,0 +1,32 @@
+.clients
+	+section
+	background: $bg 
+	overflow: hidden
+	&__header
+		font-weight: normal
+		line-height: 1.22
+		font-size: 72px  
+		margin-left: getGrid(1) 
+		margin-right: getGrid(1) 
+		margin-bottom: 100px 
+	h3
+		font-size: 48px 
+		font-weight: normal
+		margin-bottom: 30px 
+	&__list
+		// column-count: 4
+		// column-gap: 16px
+		display: flex
+		flex-wrap: wrap
+		flex-direction: row
+		font-size: 18px 
+		line-height: 1.5 
+		margin-bottom: 30px 
+		li
+			+grid(3)
+	&__more
+		color: #f50 
+		font-size: 18px 
+		float: right
+		+grid(3)
+		padding: 0 

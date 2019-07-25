@@ -1,13 +1,15 @@
 .skills
-	margin: 100px 24px
+	+section
+	
 	display: flex
 	flex-direction: row
-	position: relative
-	z-index: 2 
+	
 	background: $bg 
+	align-items: baseline
 	&__list
 		+grid(4)
 		font-size: 48px 	
+		color: #f50 
 	&__text
 		+grid(8)
 		font-size: 32px 
