@@ -3,12 +3,13 @@ $bg: #f3f3f3
 $text: #1d0b25
 
 =grid($n)
-	width: 8.33%*$n
+	width: ceil(8.33%*$n)
 	padding-right: 16px  
 @function getGrid($n)
-	@return 8.33%*$n
+	@return ceil(8.33%*$n)
 =section
 	margin: 440px 24px
+	padding: 24px 0
 	position: relative
 	z-index: 2  
 .space
@@ -17,19 +18,14 @@ body
 	background: $bg
 	// font-size: 200px
 	// +css-lock(16, 50, 600, 1000)
-	line-height: 1.4
+	line-height: 1.5
 	font-family: dax,sans-serif 
 	color: $text 
+
 
 a
 	color: #0000ff 
 
-.out
-	background-image: 
-    repeating-linear-gradient(
-      90deg,
-      yellow,
-      yellow 6%,
-      red 6%,
-      red 8.33% /* determines size */
-    );
+.out 
+	margin: 0 auto
+	+r(1200) max-width: 1248px

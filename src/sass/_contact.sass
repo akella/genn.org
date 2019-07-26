@@ -15,7 +15,10 @@
 		line-height: 1.5 
 		margin-bottom: 100px 
 		p
-			+grid(4)
+			+grid(6)
+			margin-right: getGrid(1)
+			&:last-child
+				margin: 0;
 			span
 				display: block
 				height: 3em 
@@ -27,18 +30,18 @@
 					height: 1px
 					background: #f60 
 					left: 0
-					top: 1em   
+					top: 1em
 .socials
 	display: flex
 	&__getme
-		+grid(5)
+		+grid(9)
 		margin-right: getGrid(1) 
 	&__stuff
 		height: 3px
 		font-size: 32px 
 		font-weight: normal
 		margin-bottom: 30px 
-		+grid(6)
+		+grid(9)
 	ul
 		font-size: 32px 
 		line-height: 2 
