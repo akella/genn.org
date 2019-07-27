@@ -1,0 +1,25 @@
+.sneakpeek
+	+section
+	display:flex
+	justify-content: space-around;
+
+
+	&__frame
+		position: sticky
+		align-self: flex-start
+		margin-left: getGrid(4)
+		width: getGrid(6)
+		height: 0
+		top: 50%
+		transform: translate(0,-50%)
+		padding-bottom: 50%
+		background: #fff
+		z-index: -1
+
+	&__gallery
+		margin-left: getGrid(4)
+		padding: 24px
+		width: getGrid(6)
+		margin-bottom: 400px
+		img
+			width: 100%
