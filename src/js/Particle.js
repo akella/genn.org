@@ -9,28 +9,27 @@ const PI = 3.1415;
 
 export default class Particle {
     constructor(img, w, h, number) {
+        this.size = 20;
         this.w = w;
         this.h = h;
         this.img = img;
         this.active = false;
         this.number = number;
-        this.size = 20;
+        
 
         this.delay = rand(this.number, 0, 1);
-        console.log(this.delay);
+        // console.log(this.delay);
         // this.delay = delay;
     }
 
-    shoot(source, t) {
+    shoot(source, t, img) {
         this.source = source;
         this.t = t;
+        this.img = img;
         /* check if time for shooting this particle has arrived */
         if (this.t - this.delay >= 0) {
             /* make it active */
             this.active = true;
-
-            /* choose our confetti */
-            // confetti = confettis[floor(random() * confettis.length)];
 
             /* position it at the fountain source, 
              * but a bit lower, depending on its radius

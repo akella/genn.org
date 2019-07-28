@@ -2,19 +2,50 @@ import Particle from './Particle';
 
 function loadImages(paths, whenLoaded) {
     const imgs = [];
+    const imgO = []
     paths.forEach(function (path) {
         const img = new Image();
         img.onload = function () {
             imgs.push(img);
-            if (imgs.length === paths.length) whenLoaded(imgs);
+            imgO.push({path,img});
+            if (imgs.length === paths.length) whenLoaded(imgO);
         };
         img.src = path;
     });
 }
 
+function inArray(target, array)
+{
+
+/* Caching array.length doesn't increase the performance of the for loop on V8 (and probably on most of other major engines) */
+
+  for(let i = 0; i < array.length; i++) 
+  {
+    if(array[i] === target)
+    {
+      return true;
+    }
+  }
+
+  return false; 
+}
+
+const unique = function(array) {
+    const a = array.concat();
+    for(let i=0; i<a.length; i+=1) {
+        for(let j=i+1; j<a.length; j+=1) {
+            if(a[i] === a[j])
+                a.splice(j-=1, 1);
+        }
+    }
+
+    return a;
+};
+
 export default class Sketch {
     constructor() {
         this.selector = '.fontain'
+        this.number = 100;
         this.time = 0;
         this.parent = document.querySelector(this.selector);
 
@@ -24,27 +55,63 @@ export default class Sketch {
         this.width = window.innerWidth;
         this.height = window.innerHeight;
 
+        this.active = false;
+
         this.particles = [];
         this.source = {
             x: this.width / 2,
             y: this.height
         };
-        this.number = 100;
+        
 
         this.canvas.width = this.width;
         this.canvas.height = this.height;
 
-        loadImages(['img/emoji.png'], (images) => {
-            this.img = images;
+
+        this.mouseOverItems = document.querySelectorAll('[data-img]');
+        this.mouseOverItems = [...this.mouseOverItems]
+
+        this.imageArray = []
+        this.currentImageArray = [];
+        this.mouseOverItems.forEach(e=>{
+        	this.imageArray = this.imageArray.concat(JSON.parse(e.getAttribute('data-img')))
+        })
+
+
+        loadImages(unique(this.imageArray), (images) => {
+        	console.log(images);
+        	this.images = images;
+            this.img = images[0].img;
 
             this.resize();
             this.mouse();
+            this.mouseOver();
             this.addParticles();
             this.animate();
 
         })
 
 
+    }
+
+    mouseOver(){
+    	this.mouseOverItems.forEach(e=>{
+    		e.addEventListener('mouseenter',()=>{
+    			const currentArray = JSON.parse(e.getAttribute('data-img'));
+    			const currentPaths = this.images.filter(v=>{
+    				 return inArray(v.path,currentArray)
+    			});
+
+    			this.currentImageArray = currentPaths.map(a=>a.img);
+    			this.active = true;
+    			this.time = 0;
+    		})
+
+    		e.addEventListener('mouseout',()=>{
+    			this.active = false;
+
+    		})
+    	})
     }
 
     mouse() {
@@ -75,7 +142,7 @@ export default class Sketch {
     addParticles() {
         for (let i = 0; i < this.number; i++) {
             this.particles.push(
-                new Particle(this.img[0], this.width, this.height, this.number)
+                new Particle(this.img, this.width, this.height, this.number)
             );
         }
     }
@@ -90,7 +157,13 @@ export default class Sketch {
             if (this.particles[i].active) { // if it's active
                 this.particles[i].draw(this.ctx); // draw it on canvas
             } else { // if not...
-                this.particles[i].shoot(this.source, this.time); // try to make it shoot up
+            	// eslint-disable-next-line
+            	if(this.active) {
+            		const newimg = this.currentImageArray[Math.floor(Math.random() * this.currentImageArray.length)]
+            		this.particles[i].shoot(this.source, this.time, newimg);
+            	} else{
+            		// console.log('not active');
+            	}
             }
         }
         const newar = this.particles.filter(e=>e.active);
