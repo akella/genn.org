@@ -6,13 +6,25 @@
 	
 	background: $bg 
 	align-items: baseline
+
 	&__list
 		+grid(4)
-		@include css-lock(40, 48, 960, 1200, font-size, px)
+		@include css-lock(32, 48, 960, 1200, font-size, px)
 		color: #f50 
 	&__text
 		+grid(7)
-		font-size: 32px 
+		@include css-lock(24, 32, 960, 1200, font-size, px)
 		line-height: 1.22 
-
-			
+		p
+			padding-bottom: 16px;
+	&__back
+		position: absolute
+		z-index: -1
+		width: getGrid(11)
+		height: 100%
+		margin-top: -1em;
+		border-top: 96px solid #fff;
+		border-bottom: 96px solid #fff;
+		margin-left: getGrid(1)
+		background: #fff
+		overflow: hidden

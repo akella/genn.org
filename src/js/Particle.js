@@ -9,7 +9,7 @@ const PI = 3.1415;
 
 export default class Particle {
     constructor(img, w, h, number) {
-        this.size = 20;
+        this.size = 40;
         this.w = w;
         this.h = h;
         this.img = img;
@@ -17,7 +17,7 @@ export default class Particle {
         this.number = number;
         
 
-        this.delay = rand(this.number, 0, 1);
+        this.delay = rand(this.number, .7, 1)*20;
         // console.log(this.delay);
         // this.delay = delay;
     }
@@ -45,7 +45,7 @@ export default class Particle {
              */
             this.a = {
                 x: 0,
-                y: .4
+                y: .3
             };
 
             /* generate a random angle at which it shoots up */
@@ -53,7 +53,7 @@ export default class Particle {
 
             /* Set up our confetti particle angle */
             this.c_angle = 0;
-            this.angle_v = rand(-30, 30);
+            this.angle_v = rand(-10, 10);
 
             /* generate random velocity absolute value in that direction */
             const h = 300;

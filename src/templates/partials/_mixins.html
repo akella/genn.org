@@ -2,13 +2,3 @@
 <svg class="icon icon-{{i}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
 {% endmacro %}
 
-@mixin css-lock($minf, $maxf, $minw: 320, $maxw: 1200, $property: font-size, $unit: px) {
-  #{$property}: calc(#{$minf}#{$unit} + (#{$maxf} - #{$minf}) * ((100vw - #{$minw}#{$unit}) / (#{$maxw} - #{$minw})));
-
-  @media (max-width: #{$minw}#{$unit}) {
-    #{$property}: #{$minf}#{$unit};
-  }
-  @media (min-width: #{$maxw}#{$unit}) {
-    #{$property}: #{$maxf}#{$unit};
-  }
-}

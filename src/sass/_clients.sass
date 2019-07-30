@@ -9,6 +9,20 @@
 		margin-left: getGrid(1) 
 		margin-right: getGrid(1) 
 		margin-bottom: 100px
+		span
+			display: inline-block
+			padding: 16px
+			margin: -16px 0
+			width: getGrid(6.5)
+			z-index: -1
+			background: #fff
+			&:before
+				content: '20 years.'
+				visibility: visible
+				animation-name: text-change
+				animation-duration: 20s
+				animation-iteration-count: infinite
+				
 	h3
 		font-size: 48px 
 		font-weight: normal
@@ -30,3 +44,21 @@
 		float: right
 		+grid(3)
 		padding: 0 
+
+
+
+@keyframes text-change
+	0%
+		content: '20 years.'
+	17%
+		content: '7 300 days.'
+	34%
+		content: '438 000 hours.'
+	51%
+		content: '26•10⁶ mins.'
+	68%
+		content: '6.307e+8 sec.'
+	85%
+		content: 'fun.'
+	100%
+		content: 'ages!'
