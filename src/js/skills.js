@@ -29,9 +29,9 @@ const pick = function(myarray){
 const max = 6;
 const currentTexts = [];
 
-const el = document.querySelector('.skills__list');
-const ul = document.createElement('ul');
-el.appendChild(ul);
+const ul = document.querySelector('.skills__list');
+// const ul = document.createElement('ul');
+// el.appendChild(ul);
 
 for (let i = 0; i < max; i++) {
 	const li = document.createElement('li');
