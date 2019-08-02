@@ -1,14 +1,25 @@
 import {TimelineMax} from 'gsap';
 
 const texts = [
-'Being boring',
+'Product Design',
+'UX/UI Design',
+'Design Systems',
+'Art Direction',
+'User Research',
+'Brand Identity',
+'Visual Comms',
+'Prototyping',
+'Info Architecture',
+'Infographics',
+'CX Design'
+/* 'Being boring',
 'Nitpicking me',
 'Sarcasm',
 'Headache',
-'Raising beautiful girls',
+'Raising daughter',
 'Being cool',
 'Nerdy',
-'БОТАН',
+'БОТАН', */
 ]
 const pick = function(myarray){
 	return myarray[Math.floor(Math.random() * myarray.length)];
@@ -37,6 +48,7 @@ for (let i = 0; i < max; i++) {
 function ChangeRandomText(){
 	const tl = new TimelineMax();
 	const randIndex = Math.floor(Math.random() * max);
+	console.log(randIndex);
 	const randomLI = ul.children[randIndex];
 	const randomSpan = randomLI.querySelector('span');
 	const randomSkill = randomLI.querySelector('div');
@@ -44,24 +56,26 @@ function ChangeRandomText(){
 	// THIS IS WHERE TO CHECK FOR NEW TEXTS
 	// compare with currentTexts
 	const notVisible = texts.filter(n => !currentTexts.includes(n));
+	console.log(notVisible);
+	console.log(currentTexts);
 	// console.log(notVisible);
 	const nextText = pick(notVisible);
 	// 
 	tl.set(randomSpan,{x:"-100%"})
 	tl.to(randomSpan,
-		1,
-		{x:0,onComplete:()=>{
+		.3,
+		{x:"0%",onComplete:()=>{
 			randomSkill.innerText = nextText;
 			currentTexts[randIndex] = nextText;
 		}}
 	)
-	.to(randomSpan,1,{
+	.to(randomSpan,.5,{
 		x: '100%'
 	})
 
 	setTimeout(()=>{
 		ChangeRandomText();
-	},1000)
+	},5000)
 }
 
 
