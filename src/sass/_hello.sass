@@ -3,16 +3,20 @@
 	margin-bottom: 0  
 	line-height: 1.22
 	@include css-lock(32, 72, 600, 1200, font-size, px)
-	margin-top: 40vh
-	+rh(600) margin-top: 55vh
+	margin-top: 50vh
+	+rh(600)
+		margin-top: 65vh
 	background: $bg
 	
-	&__text
-		margin-left: getGrid(2)
-		+r(480)
-			margin-left: 0
-		background: #f3f3f3
 	&__arrow
 		position: relative
-		top: -1.2em 
+		+r(480)
+			top: 1em
+//		top: -1.2em 
 		padding-left: 16px
+
+	&__text
+		padding-left: getGrid(2)
+		// +r(480)
+		//	margin-left: 0
+		background: #f3f3f3

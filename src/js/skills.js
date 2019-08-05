@@ -48,7 +48,7 @@ for (let i = 0; i < max; i++) {
 function ChangeRandomText(){
 	const tl = new TimelineMax();
 	const randIndex = Math.floor(Math.random() * max);
-	console.log(randIndex);
+	// console.log(randIndex);
 	const randomLI = ul.children[randIndex];
 	const randomSpan = randomLI.querySelector('span');
 	const randomSkill = randomLI.querySelector('div');
@@ -56,8 +56,8 @@ function ChangeRandomText(){
 	// THIS IS WHERE TO CHECK FOR NEW TEXTS
 	// compare with currentTexts
 	const notVisible = texts.filter(n => !currentTexts.includes(n));
-	console.log(notVisible);
-	console.log(currentTexts);
+	// console.log(notVisible);
+	// console.log(currentTexts);
 	// console.log(notVisible);
 	const nextText = pick(notVisible);
 	// 

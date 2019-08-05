@@ -6,22 +6,19 @@
 	align-items: stretch
 	
 	background: $bg 
-	// align-items: baseline
+	align-items: baseline
 
 
 	&__list
 		+grid(4)
 		@include css-lock(32, 48, 960, 1200, font-size, px)
 		color: #f50 
-		// height: 100%
-		border: 1px solid #f00
 		display: flex
 		flex-direction: column
 		justify-content: space-between
 		li
 			position: relative
 			overflow: hidden
-			border: 2px solid green
 			span
 				background: #f50
 				display: block
@@ -34,7 +31,7 @@
 				transform: translate(-100%,0)
 	&__text
 		+grid(7)
-		@include css-lock(24, 36, 960, 1200, font-size, px)
+		@include css-lock(24, 32, 960, 1200, font-size, px)
 		line-height: 1.22 
 		p
 			padding-bottom: 16px
