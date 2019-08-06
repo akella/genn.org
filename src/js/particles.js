@@ -1,7 +1,4 @@
-
-
-
-
+import {TimelineMax} from 'gsap';
 import Particle from './Particle';
 
 function loadImages(paths, whenLoaded) {

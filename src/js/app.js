@@ -1,3 +1,4 @@
 import './particles';
 import './skills';
-import './clients'
+import './clients';
+import './intersections';
