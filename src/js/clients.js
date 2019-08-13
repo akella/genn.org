@@ -15,11 +15,8 @@ function ChangeDurationText(){
 	const durationTxt = document.querySelector('.clients__header__duration');
 
 	// Take the new element and move it to the end of the array
-	// compare with currentTexts
 	const newTxt = texts.shift();
-	console.log(newTxt);
 	texts.push(newTxt);
-	console.log(texts);
 
 	durationTxt.innerText = newTxt;
 
