@@ -17,7 +17,7 @@ export default class Particle {
         this.number = number;
         
 
-        this.delay = rand(this.number, .2, 1)*20;
+        this.delay = rand(this.number, .2, 1)*5;
         // console.log(this.delay);
         // this.delay = delay;
     }
