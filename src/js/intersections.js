@@ -1,17 +1,14 @@
-const headerText = document.querySelector('.header__text');
-const headerLogo = document.querySelector('.header__logo');
-const headerCV = document.querySelector('.header__cv');
-const skills = document.querySelector('.skills');
-
+const hello = document.querySelector('.hello');
 
 function handler(entries) {
-  const entry = entries;
-    console.log(entry);
-
-    alert(entry.getBoundingRect());
-
+  	entries.forEach(entry => {
+		if(entry.intersectionRatio!==1){
+	      alert('Visible');
+	    }
+	    else {alert('Not Visible');}
+	},{threshold: 1});
 }
 
 
 const observer = new IntersectionObserver(handler);
-observer.observe(skills);
+observer.observe(hello);

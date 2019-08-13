@@ -12,24 +12,17 @@
 		background: $bg
 		position: relative
 		+fadein
-		p
+		&__topline
+			position: relative
 			z-index: 10
-			span
-				display: inline-block
-				padding: 16px
-				margin: -16px 0
-				width: getGrid(6.5)
-				z-index: 9
-				position: absolute
-				background: #fff
-				&:after
-					  content: ''
-					  position: absolute
-					  top: 0
-					  right: 0
-					  bottom: 0
-					  left: 0
-				
+		&__duration
+			display: inline-block
+			padding: 16px
+			margin: -16px 0
+			width: getGrid(6.5)
+			position: absolute
+			background: #fff
+						
 	h3
 		font-size: 48px 
 		font-weight: normal

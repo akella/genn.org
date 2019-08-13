@@ -6,13 +6,26 @@
 	transform: translate(0,-50%)
 
 	align-items: baseline
-
+	
 	// Desktop
 	
 	display: flex
 	flex-direction: row
 	margin: 0 24px  
 	z-index: 1 
+	&:before
+		position: absolute
+		content: ''
+		top: -30vh
+		left: 0
+		height: 30vh
+		width: 100%
+		background: linear-gradient(rgba(243,243,243,0), rgba(243,243,243,1))
+	padding: 32px 0
+	background: $bg
+
+	&__pinned
+		border-bottom: 1px solid #d3d3d3
 
 
 	&__logo

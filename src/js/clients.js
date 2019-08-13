@@ -9,14 +9,10 @@ const texts = [
 'fun.',
 'ages!']
 
-const header = document.querySelector('.clients__header');
-// const ul = document.createElement('ul');
-// el.appendChild(ul);
-
 
 function ChangeDurationText(){
 	const tl = new TimelineMax();
-	const durationTxt = header.querySelector('span');
+	const durationTxt = document.querySelector('.clients__header__duration');
 
 	// Take the new element and move it to the end of the array
 	// compare with currentTexts
