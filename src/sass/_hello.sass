@@ -9,6 +9,7 @@
 	//background: $bg
 	z-index: -1
 	position: sticky
+	perspective: 1000
 	
 	&__arrow
 		position: relative
@@ -21,25 +22,3 @@
 	&__text
 		padding-left: getGrid(2)
 		margin-left: -32px
-		&__bar
-			position: relative
-			overflow: hidden
-		&__bar:after
-			content: '.'
-			position: absolute
-  			top: 0
-			right: 0
-			bottom: 0
-			left: 0
-			background: #000
-			transform: translate(-100%, 0)
-			animation: overBar 3s forwards
-			animation-delay: 2s
-			animation-iteration-count: infinite
-
-
-@keyframes overBar
-	50%
-		transform: translate(30%, 0)
-	100%
-    	transform: translate(100%, 0)

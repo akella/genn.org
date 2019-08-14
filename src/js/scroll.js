@@ -10,20 +10,21 @@ const contactRect = document.querySelector('.contact').getBoundingClientRect();
 const bodyRect = document.body.getBoundingClientRect();
 
 const helloText = document.querySelector('.hello__text');
-const helloWords = helloText.querySelectorAll('span');
-
-for (let i = 0; i < 7; i++) {
-    console.log(helloWords[i]);
-}
 
 window.addEventListener("scroll", function (event) {
 	const scroll = this.scrollY;
-    const helloOpacity = 1-scroll/400;
+    const helloOpacity = 1-scroll/600;
     const skillsTop = skillsRect.top-bodyRect.top-window.innerHeight/2-48;
     const skillsBottom =skillsRect.bottom-bodyRect.top-window.innerHeight/2+48;
 
-    if(helloOpacity>0) {hello.style.opacity = helloOpacity;}
-    else {hello.style.opacity = 0;}
+    if(helloOpacity>0) {
+        // if(hello.style.visibility === "hidden") hello.style.visibility = "visible";
+            hello.style.opacity = helloOpacity;
+            helloText.style.transform = `translateZ(${(1-helloOpacity)*-40}px)`;
+    } else {
+            hello.style.opacity = 0;
+        //    hello.style.visible = "hidden";
+    }
 
     if(scroll>skillsTop && scroll<skillsBottom) {
     	logo.style.fill='#ffffff';
