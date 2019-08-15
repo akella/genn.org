@@ -22,6 +22,8 @@
 			width: getGrid(6.5)
 			position: absolute
 			background: #fff
+			+m
+				display: block
 						
 	h3
 		font-size: 48px 
@@ -46,6 +48,8 @@
 			bottom: -56px
 		li
 			+grid(3)
+			+m
+				+grid(6)
 	&__more
 		background: $bg
 		color: #f50 
@@ -55,6 +59,9 @@
 		padding: 0 
 		position: relative
 		+fadeout
+		+m
+			float: none
+			width: auto
 
 
 

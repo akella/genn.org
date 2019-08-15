@@ -13,6 +13,11 @@
 	flex-direction: row
 	margin: 0 24px  
 	z-index: 1 
+	
+	+m
+		// display: none !important
+		// background: red 
+		display: block
 
 	&__pinned
 		border-bottom: 1px solid #d8d8d8
@@ -21,15 +26,16 @@
 	&__logo
 		+grid(2)
 		align-self: center
+		+m
+			float: left
+			width: auto
 	&__text
 		+grid(10)
 		+r(480)
 			padding-left: getGrid(2)
 			line-height: 1.5
-		line-height: 1.5
 		&__welcome
 			font-weight: 900
-		
 
 	&__cv
 		margin-left: auto 
@@ -38,9 +44,11 @@
 		// height: 40px 
 		// line-height: 40px 
 		width: getGrid(2)
-		+r(480)
+		// +r(480)
+		// 	width: auto
+		// 	margin-left: getGrid(2)
+		+m
 			width: auto
-			margin-left: getGrid(2)
 
 .logo
 	fill: #ff5500
