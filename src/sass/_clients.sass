@@ -12,6 +12,8 @@
 		background: $bg
 		position: relative
 		+fadein
+		+m
+			margin: 0
 		&__topline
 			position: relative
 			z-index: 10
@@ -22,8 +24,11 @@
 			width: getGrid(6.5)
 			position: absolute
 			background: #fff
+			z-index: 9
 			+m
 				display: block
+				width: getGrid(12)
+				margin-left: -16px
 						
 	h3
 		font-size: 48px 
