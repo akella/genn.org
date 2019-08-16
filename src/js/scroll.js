@@ -28,7 +28,6 @@ window.addEventListener("scroll", function (event) {
 
     if(scroll>skillsTop && scroll<skillsBottom) {
     	logo.style.fill='#ffffff';
-        console.log('White logo');
     } else logo.style.fill='#ff5500';
 
     if(scroll<skillsRect.top-bodyRect.top){

@@ -1,6 +1,8 @@
 +font(dax,'DaxlineWebPro')
 $bg: #f3f3f3
 $text: #1d0b25
+$border: #d8d8d8
+$highlight: #ff5500
 
 =grid($n)
 	width: 8.33%*$n
@@ -46,6 +48,7 @@ $text: #1d0b25
 .space
 	height: 60vh 
 body
+	cursor: none
 	background: $bg
 	// font-size: 200px
 	// +css-lock(16, 50, 600, 1000)
@@ -72,3 +75,29 @@ b
 	margin: 0 auto
 	max-width: 1248px
 
+.cursor
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 100
+	pointer-events: none
+	&__point
+		background: $highlight
+		position: absolute
+		left: -100px
+		top: -100px
+		height: 8px
+		width: 8px
+		z-index: 99
+
+	&__frame
+		background: #ffffff
+		position: absolute
+		left: -100px
+		top: -100px
+		height: 24px
+		width: 24px
+		z-index: 98
+		transition: all .5s ease-out
