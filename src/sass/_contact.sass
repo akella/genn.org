@@ -5,20 +5,25 @@
 	+fadein
 	border-bottom: 1px solid #d8d8d8
 	&__header
-		font-size: 72px 
+		@include css-lock(40, 72, 320, 1200, font-size, px);
 		line-height: 1.22
 		font-weight: normal
 		margin-bottom: 100px 
 		strong
 			font-weight: normal
 			color: #f50 
+		+m
+			margin-bottom: 32px
+		+p
+			margin-bottom: 32px
 	&__text
 		display: flex
 		flex-direction: row
 		line-height: 1.5 
-		margin-bottom: 100px 
+		margin-bottom: 96px 
 		+m
 			display: block
+			margin-bottom: 32px
 		p
 			+grid(4)
 			+m
@@ -38,28 +43,34 @@
 					top: 1em
 .socials
 	display: flex
+	+m
+		display: block
 	&__stuff
-		height: 3px
-		font-size: 32px 
+		@include css-lock(24, 32, 320, 1200, font-size, px);
 		font-weight: normal
-		margin-bottom: 30px 
+		margin-bottom: 32px 
 		+grid(7)
 		margin-right: getGrid(1) 
+		+m
+			margin-right: 0
+			+grid(12)
 	&__getme
-		+grid(4)
-
+		width: getGrid(4)
+		+m
+			width: getGrid(12)
+			padding-right: 0
 	ul
-		font-size: 32px 
+		@include css-lock(24, 32, 320, 1200, font-size, px);
 		line-height: 2 
 .copy
 	background: #fff 
 	padding: 16px 
-	font-size: 32px 
+	@include css-lock(24, 32, 320, 1200, font-size, px);
 	position: relative
 	margin-bottom: 16px 
-	&__button
+/*	&__button
 		position: absolute
 		right: 16px 
 		top: 50%
 		transform: translate(0,-50%) 
-		font-size: 24px
+		font-size: 24px */

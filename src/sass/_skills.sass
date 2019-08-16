@@ -14,7 +14,7 @@
 		padding: 32px 16px
 	&__list
 		+grid(4)
-		@include css-lock(22, 48, 960, 1200, font-size, px)
+		@include css-lock(18, 48, 600, 1200, font-size, px)
 		color: #f50 
 		display: flex
 		flex-direction: column
@@ -31,6 +31,7 @@
 			overflow: hidden
 			+m
 				width: 50%
+				padding-top: 8px
 				
 			span
 				background: #f50
@@ -67,3 +68,7 @@
 		+fadeout
 		+m
 			display: none
+		+p
+			margin-left: getGrid(2)
+			width: getGrid(10)
+			transform: translateX(-16px)

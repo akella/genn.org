@@ -7,7 +7,6 @@
 
 	&__frame
 		position: sticky
-		// align-self: flex-start
 		margin-left: getGrid(4)
 		width: getGrid(6)
 		height: 0
@@ -16,6 +15,8 @@
 		padding-bottom: 50%
 		background: #fff
 		z-index: -1
+		+p
+			margin-left: getGrid(6)
 
 	&__gallery
 		margin-left: getGrid(4)
@@ -24,3 +25,5 @@
 		margin-bottom: 200px
 		img
 			width: 100%
+		+p
+			margin-left: getGrid(6)

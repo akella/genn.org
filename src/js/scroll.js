@@ -7,6 +7,8 @@ const skillsRect = document.querySelector('.skills').getBoundingClientRect();
 const clientsRect = document.querySelector('.clients').getBoundingClientRect();
 const industriesRect = document.querySelector('.industries').getBoundingClientRect();
 const contactRect = document.querySelector('.contact').getBoundingClientRect();
+const sneakPeekRect = document.querySelector('.sneakpeek').getBoundingClientRect();
+const footerRect = document.querySelector('.footer').getBoundingClientRect();
 const bodyRect = document.body.getBoundingClientRect();
 
 const helloText = document.querySelector('.hello__text');
@@ -38,7 +40,9 @@ window.addEventListener("scroll", function (event) {
     	headerWelcome.innerText='Challenges hungry';
     } else if(scroll>=industriesRect.top-bodyRect.top && scroll<contactRect.top-bodyRect.top){
     	headerWelcome.innerText='Love to communicate';
-    } else if(scroll>=contactRect.top-bodyRect.top) {
-    	headerWelcome.innerText='Cheers, Genn';
+    } else if(scroll>=contactRect.top-bodyRect.top && scroll<footerRect.top-bodyRect.top) {
+    	headerWelcome.innerText='Some eye candies';
+    } else if(scroll>=footerRect.top-bodyRect.top) {
+        headerWelcome.innerText='Cheers, Genn';
     }
 });

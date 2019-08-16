@@ -29,28 +29,32 @@
 		+m
 			float: left
 			width: auto
+			height: auto
+		svg
+			fill: #ff5500
+			transition: all .2s linear
+			max-width: 84px
+			min-width: 32px
+			width: auto
 	&__text
 		+grid(10)
+		+p
+			+grid(6)
 		+m
-			+grid(12)
+			+grid(10)
 			padding-left: getGrid(2)
 			line-height: 1.5
 		&__welcome
-			font-weight: 900
+			font-family: daxbold
+		&__email
+			color: $text
 
 	&__cv
 		margin-left: auto 
-		// display: block
-		// border: 1px solid red 
-		// height: 40px 
-		// line-height: 40px 
 		width: getGrid(2)
-		// +r(480)
-		// 	width: auto
-		// 	margin-left: getGrid(2)
+		+p
+			+grid(4)
 		+m
-			width: auto
-
-.logo
-	fill: #ff5500
-	transition: all .2s linear
+			width: getGrid(10)
+			padding-top: 8px
+			margin-left: getGrid(2)
