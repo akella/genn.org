@@ -1,7 +1,7 @@
 +font(dax,'DaxlineWebPro')
 +font(daxbold,'DaxlineWebPro-Bold')
 $bg: #f3f3f3
-$text: #1d0b25
+$text: #1b1d1c
 $border: #d8d8d8
 $highlight: #ff5500
 
@@ -25,8 +25,7 @@ $highlight: #ff5500
 	// border-bottom: 1px solid #bababa
 	// border: 1px solid red
 
-=fadein
-	&:before
+.fadein:before
 		position: absolute
 		content: ''
 		top: -80px
@@ -35,8 +34,7 @@ $highlight: #ff5500
 		width: 100%
 		background: linear-gradient(rgba(243,243,243,0), rgba(243,243,243,1))
 
-=fadeout
-	&:after
+.fadeout:after
 		position: absolute
 		content: ''
 		bottom: -80px
@@ -101,4 +99,35 @@ b
 		height: 24px
 		width: 24px
 		z-index: 98
-		transition: all .5s ease-out
+	
+
+
+.darkside, body.darkside, .darkside .clients__header, .darkside .clients__title, section.darkside .clients__list, .darkside .clients__more
+	background: $text !important
+	color: $bg
+//	transition: background .2s linear
+
+.darkside .clients__header:before, .darkside .clients__title:before, .industries:before
+	background: linear-gradient(rgba(27,29,28,0), rgba(29,28,27,1)) !important
+//	transition-delay: 2s
+//	transition: all .2s linear
+
+section.darkside .clients__list:after, section.darkside .clients__more:after, .darkside div:after,
+	background: linear-gradient(rgba(27,29,28,1), rgba(29,28,27,0)) !important
+//	transition-delay: .2s
+// transition: all .2s linear
+
+.darkside .header__text__email
+	color: $bg
+
+.darkside .header__cv a
+	color: $bg !important
+	text-decoration: underline
+
+.darkmatter
+	position: relative
+	width: 100vw
+	margin-left: -50vw
+	left: 50%
+	height: 440px
+	bottom: 0

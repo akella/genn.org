@@ -11,6 +11,10 @@ const sneakPeekRect = document.querySelector('.sneakpeek').getBoundingClientRect
 const footerRect = document.querySelector('.footer').getBoundingClientRect();
 const bodyRect = document.body.getBoundingClientRect();
 
+const skills = document.querySelector('.skills');
+const clients = document.querySelector('.clients');
+const darkMatter = document.querySelector('.darkmatter');
+
 const helloText = document.querySelector('.hello__text');
 
 window.addEventListener("scroll", function (event) {
@@ -28,9 +32,13 @@ window.addEventListener("scroll", function (event) {
         //    hello.style.visible = "hidden";
     }
 
+    // Logo colour change on skills
+
     if(scroll>skillsTop && scroll<skillsBottom) {
     	logo.style.fill='#ffffff';
     } else logo.style.fill='#ff5500';
+
+    // Header text change on sections change
 
     if(scroll<skillsRect.top-bodyRect.top){
     	headerWelcome.innerText='Hello, I am Genn';;
@@ -45,4 +53,25 @@ window.addEventListener("scroll", function (event) {
     } else if(scroll>=footerRect.top-bodyRect.top) {
         headerWelcome.innerText='Cheers, Genn';
     }
+
+
+    // Dark mode on and off on scroll
+    if(scroll<skillsRect.bottom-bodyRect.top+52) {
+        document.body.classList.remove('darkside');
+        skills.classList.remove('darkside');
+        clients.classList.remove('darkside');
+        darkMatter.classList.remove('darkside');
+    } else if(scroll>=skillsRect.bottom-bodyRect.top+52 && scroll<industriesRect.bottom-bodyRect.top-window.innerHeight){
+        document.body.classList.add('darkside');
+        skills.classList.add('darkside');
+        clients.classList.add('darkside');
+        darkMatter.classList.add('darkside');
+    }  else if(scroll>=industriesRect.bottom-bodyRect.top-window.innerHeight) {
+        document.body.classList.remove('darkside');
+    }
+
+
+    // else if (scroll>=skillsRect.bottom-bodyRect.top){
+       // console.log(`${scroll  }r=${  industriesRect.bottom-bodyRect.top-window.innerHeight}`);
+    // }
 });

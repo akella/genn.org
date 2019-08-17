@@ -1,9 +1,9 @@
 .industries
 	+section
-	background: $bg
+	background: $text
+	color: $bg
 	position: relative
-	+fadein
-	border-bottom: 1px solid #d8d8d8
+	margin-top: 0
 	h2
 		font-size: 18px 
 		font-weight: normal
@@ -12,7 +12,7 @@
 	&__list
 		@include css-lock(32, 48, 960, 1200, font-size, px)
 		line-height: 1.5
-		
+		padding-bottom: 96px
 		display: flex
 		flex-direction: row
 		flex-wrap: wrap
@@ -26,3 +26,13 @@
 				+grid(12)
 			&:hover
 				background: #fff
+				color: $text
+	&__back
+		position: absolute
+		z-index: -1
+		width: 100vw
+		background: $text
+		margin-left: -50vw
+		left: 50%
+		top: 0
+		bottom: 0
