@@ -3,6 +3,9 @@
 	// display:flex
 	// justify-content: space-around
 	margin-top: 600px
+	+m
+		z-index: -200
+
 
 
 	&__frame
@@ -17,6 +20,9 @@
 		z-index: -1
 		+p
 			margin-left: getGrid(6)
+		+m
+			margin-left: 0
+			width: getGrid(12)
 
 	&__gallery
 		margin-left: getGrid(4)
@@ -27,3 +33,8 @@
 			width: 100%
 		+p
 			margin-left: getGrid(6)
+		+m
+			padding: 8px
+			margin-left: 0
+			width: getGrid(12)
+			margin-bottom: 96px
