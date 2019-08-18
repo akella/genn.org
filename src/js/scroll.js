@@ -71,6 +71,6 @@ window.addEventListener("scroll", function (event) {
 
 
     // else if (scroll>=skillsRect.bottom-bodyRect.top){
-        console.log(`${scroll  }r=${  industriesRect.bottom-bodyRect.top-window.innerHeight}`);
+        // console.log(`${scroll  }r=${  industriesRect.bottom-bodyRect.top-window.innerHeight}`);
     // }
 });
