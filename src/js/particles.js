@@ -1,6 +1,8 @@
 import {TimelineMax} from 'gsap';
 import Particle from './Particle';
 
+const scrolled = false;
+
 function loadImages(paths, whenLoaded) {
     const imgs = [];
     const imgO = []
@@ -96,23 +98,26 @@ export default class Sketch {
     }
 
     mouseOver(){
-    	this.mouseOverItems.forEach(e=>{
-    		e.addEventListener('mouseenter',()=>{
-    			const currentArray = JSON.parse(e.getAttribute('data-img'));
-    			const currentPaths = this.images.filter(v=>{
-    				 return inArray(v.path,currentArray)
-    			});
-
-    			this.currentImageArray = currentPaths.map(a=>a.img);
-    			this.active = true;
-    			this.time = 0;
-    		})
-
-    		e.addEventListener('mouseout',()=>{
-    			this.active = false;
-
-    		})
-    	})
+        if(scrolled){
+            scrolled = false;
+            this.mouseOverItems.forEach(e=>{
+                e.addEventListener('mouseenter',()=>{
+                    const currentArray = JSON.parse(e.getAttribute('data-img'));
+                    const currentPaths = this.images.filter(v=>{
+                         return inArray(v.path,currentArray)
+                    });
+    
+                    this.currentImageArray = currentPaths.map(a=>a.img);
+                    this.active = true;
+                    this.time = 0;
+                })
+    
+                e.addEventListener('mouseout',()=>{
+                    this.active = false;
+    
+                })
+            })
+        }    
     }
 
     mouse() {
@@ -175,3 +180,7 @@ export default class Sketch {
 }
 
 const b = new Sketch();
+
+window.addEventListener("scroll", function (event) {
+        scrolled = true;
+    }
