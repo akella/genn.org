@@ -3,14 +3,6 @@ const header = document.querySelector('.header');
 const headerWelcome = document.querySelector('.header__text__welcome');
 const logo = document.querySelector('.logo');
 
-const skillsRect = document.querySelector('.skills').getBoundingClientRect();
-const clientsRect = document.querySelector('.clients').getBoundingClientRect();
-const industriesRect = document.querySelector('.industries').getBoundingClientRect();
-const contactRect = document.querySelector('.contact').getBoundingClientRect();
-const sneakPeekRect = document.querySelector('.sneakpeek').getBoundingClientRect();
-const footerRect = document.querySelector('.footer').getBoundingClientRect();
-const bodyRect = document.body.getBoundingClientRect();
-
 const skills = document.querySelector('.skills');
 const clients = document.querySelector('.clients');
 const darkMatter = document.querySelector('.darkmatter');
@@ -20,6 +12,13 @@ const helloText = document.querySelector('.hello__text');
 window.addEventListener("scroll", function (event) {
 	const scroll = this.scrollY;
     const helloOpacity = 1-scroll/600;
+    const skillsRect = document.querySelector('.skills').getBoundingClientRect();
+    const clientsRect = document.querySelector('.clients').getBoundingClientRect();
+    const industriesRect = document.querySelector('.industries').getBoundingClientRect();
+    const contactRect = document.querySelector('.contact').getBoundingClientRect();
+    const sneakPeekRect = document.querySelector('.sneakpeek').getBoundingClientRect();
+    const footerRect = document.querySelector('.footer').getBoundingClientRect();
+    const bodyRect = document.body.getBoundingClientRect();
     const skillsTop = skillsRect.top-bodyRect.top-window.innerHeight/2-48;
     const skillsBottom =skillsRect.bottom-bodyRect.top-window.innerHeight/2+48;
 
@@ -72,6 +71,6 @@ window.addEventListener("scroll", function (event) {
 
 
     // else if (scroll>=skillsRect.bottom-bodyRect.top){
-       // console.log(`${scroll  }r=${  industriesRect.bottom-bodyRect.top-window.innerHeight}`);
+        console.log(`${scroll  }r=${  industriesRect.bottom-bodyRect.top-window.innerHeight}`);
     // }
 });
