@@ -48,7 +48,7 @@ window.addEventListener("scroll", function (event) {
     	headerWelcome.innerText='Challenges hungry';
     } else if(scroll>=industriesRect.top-bodyRect.top && scroll<contactRect.top-bodyRect.top){
     	headerWelcome.innerText='Love to communicate';
-    } else if(scroll>=contactRect.top-bodyRect.top && scroll<footerRect.top-bodyRect.top) {
+    } else if(scroll>=contactRect.top-bodyRect.top && scroll<industriesRect.bottom-bodyRect.top-window.innerHeight) {
     	headerWelcome.innerText='Some eye candies';
     } else if(scroll>=footerRect.top-bodyRect.top) {
         headerWelcome.innerText='Cheers, Genn';
