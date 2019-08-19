@@ -17,7 +17,7 @@ window.addEventListener("scroll", function (event) {
     const industriesRect = document.querySelector('.industries').getBoundingClientRect();
     const contactRect = document.querySelector('.contact').getBoundingClientRect();
     const sneakPeekRect = document.querySelector('.sneakpeek').getBoundingClientRect();
-    const footerRect = document.querySelector('.footer').getBoundingClientRect();
+    // const footerRect = document.querySelector('.footer').getBoundingClientRect();
     const bodyRect = document.body.getBoundingClientRect();
     const skillsTop = skillsRect.top-bodyRect.top-window.innerHeight/2-48;
     const skillsBottom =skillsRect.bottom-bodyRect.top-window.innerHeight/2+48;
@@ -47,9 +47,9 @@ window.addEventListener("scroll", function (event) {
     	headerWelcome.innerText='Challenges hungry';
     } else if(scroll>=industriesRect.top-bodyRect.top && scroll<contactRect.top-bodyRect.top){
     	headerWelcome.innerText='Love to communicate';
-    } else if(scroll>=contactRect.top-bodyRect.top && scroll<industriesRect.bottom-bodyRect.top-window.innerHeight) {
+    } else if(scroll>=contactRect.top-bodyRect.top && scroll<sneakPeekRect.bottom-bodyRect.top-window.innerHeight*2) {
     	headerWelcome.innerText='Some eye candies';
-    } else if(scroll>=footerRect.top-bodyRect.top) {
+    } else if(scroll>=sneakPeekRect.bottom-bodyRect.top-window.innerHeight*2) {
         headerWelcome.innerText='Cheers, Genn';
     }
 
@@ -59,18 +59,18 @@ window.addEventListener("scroll", function (event) {
         document.body.classList.remove('darkside');
         skills.classList.remove('darkside');
         clients.classList.remove('darkside');
-        darkMatter.classList.remove('darkside');
+        // darkMatter.classList.remove('darkside');
     } else if(scroll>=skillsRect.bottom-bodyRect.top+52 && scroll<industriesRect.bottom-bodyRect.top-window.innerHeight){
         document.body.classList.add('darkside');
         skills.classList.add('darkside');
         clients.classList.add('darkside');
-        darkMatter.classList.add('darkside');
+        // darkMatter.classList.add('darkside');
     }  else if(scroll>=industriesRect.bottom-bodyRect.top-window.innerHeight) {
         document.body.classList.remove('darkside');
     }
 
 
     // else if (scroll>=skillsRect.bottom-bodyRect.top){
-        // console.log(`${scroll  }r=${  industriesRect.bottom-bodyRect.top-window.innerHeight}`);
+       //  console.log(`${scroll  }r=${  sneakPeekRect.bottom-bodyRect.top-window.innerHeight*2}`);
     // }
 });
