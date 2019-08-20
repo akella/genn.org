@@ -1,5 +1,5 @@
 /*eslint-disable*/
-const {body} = document;
+const {body} = document.body;
 
 const lerp = (a, b, n) => (1 - n) * a + n * b;
 
@@ -9,7 +9,7 @@ const getMousePos = (e) => {
     if (!e) e = window.event;
     if (e.pageX || e.pageY) {
         posx = e.pageX;
-        posy = e.pageY;
+        posy = e.pageY - window.scrollY;
     }
     else if (e.clientX || e.clientY)    {
         posx = e.clientX + body.scrollLeft + document.documentElement.scrollLeft;
