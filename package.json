@@ -76,6 +76,7 @@
     }
   },
   "dependencies": {
+    "charming": "^3.0.1",
     "gsap": "^2.1.3",
     "intersection-observer": "^0.7.0"
   }
