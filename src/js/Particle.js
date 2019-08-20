@@ -36,7 +36,7 @@ export default class Particle {
              */
             this.pos = {
                 x: this.source.x + rand(-10, 10),
-                y: this.source.y
+                y: this.source.y - 12
             };
 
             /*

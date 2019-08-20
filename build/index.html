@@ -12,18 +12,21 @@
   <body>
     <!-- BEGIN content -->
     <div class="out">
-      <svg class="distort" width="350" height="450" viewBox="0 0 350 450">
-        <filter id="distortionFilter">
-          <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="5" seed="2" stitchTiles="noStitch" x="0%" y="0%" width="100%" height="100%" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse" />
-        </filter>
-        <g filter="url(#distortionFilter)">
-          <image class="distort__img" x="50" y="50" xlink:href="img/9.jpg" height="350" width="250" />
-          <image class="distort__img" x="50" y="50" xlink:href="img/10.jpg" height="350" width="250" />
-          <image class="distort__img" x="50" y="50" xlink:href="img/11.jpg" height="350" width="250" />
-          <image class="distort__img" x="50" y="50" xlink:href="img/12.jpg" height="350" width="250" />
-        </g>
-      </svg>
+      <!-- 
+<svg class="distort" width="350" height="450" viewBox="0 0 350 450">
+	<filter id="distortionFilter">
+		<feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="5" seed="2" stitchTiles="noStitch" x="0%" y="0%" width="100%" height="100%" result="noise"/>
+		<feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"/>
+	</filter>
+	<g filter="url(#distortionFilter)">
+		<image class="distort__img" x="50" y="50" xlink:href="img/9.jpg" height="350" width="250"/>
+		<image class="distort__img" x="50" y="50" xlink:href="img/10.jpg" height="350" width="250"/>
+		<image class="distort__img" x="50" y="50" xlink:href="img/11.jpg" height="350" width="250"/>
+		<image class="distort__img" x="50" y="50" xlink:href="img/12.jpg" height="350" width="250"/>
+		<image class="distort__img" x="50" y="50" xlink:href="img/11.jpg" height="350" width="250"/>
+		<image class="distort__img" x="50" y="50" xlink:href="img/12.jpg" height="350" width="250"/>
+	</g>
+</svg> -->
       <div class="cursor">
         <div class="cursor__inner cursor__inner--circle"></div>
         <div class="cursor__inner cursor__inner--dot"></div>
@@ -67,7 +70,7 @@
         <ul class="skills__list">
         </ul>
         <div class="skills__text">
-          <p><span class="stripe">Usually, I join</span> a project at the very beginning or the moment help is needed the most. It doesn’t matter if I start from scratch or have a working solution to support. I build a strong product as a mixture of design, technology, strategy, research and deep understanding of the underlying process.</p>
+          <p><span class="stripe">Usually,</span> I join a project at the very beginning or the moment help is needed the most. It doesn’t matter if I start from scratch or have a working solution to support. I build a strong product as a mixture of design, technology, strategy, research and deep understanding of the underlying process.</p>
           <p>I don’t just solve usability tasks. I solve business tasks making the product the most usable the way the business needs it to be.</p>
         </div>
       </section>
@@ -94,25 +97,25 @@
         <div class="clients__more fadeout">… and many more since 1998!</div>
       </section>
       <!-- end clients -->
-      <div class="darkmatter darkside"></div>
+      <div class="darkmatter"></div>
       <!-- begin industries -->
       <section class="industries fadein darkside">
         <div class="industries__back">
         </div>
         <h2 class="industries__header"> Here are only a few industries and activities I applied my skills in </h2>
         <ul class="industries__list">
-          <li data-img='["img/emoji/crystal-ball.png"]'>Artificial Intelligence</li>
-          <li data-img='["img/emoji/vcr.png"]'>Video Processing</li>
-          <li data-img='["img/emoji/play.png"]'>Video Solutions</li>
-          <li data-img='["img/emoji/clipboard.png"]'>Enterprise</li>
-          <li data-img='["img/emoji/shopping-trolley.png"]'>Retail</li>
-          <li data-img='["img/emoji/popcorn.png"]'>Streaming</li>
-          <li data-img='["img/emoji/newspaper.png"]'>News and Media</li>
-          <li data-img='["img/emoji/chart.png"]'>Data Visualisation</li>
-          <li data-img='["img/emoji/hugging-face.png"]'>Social Projects</li>
-          <li data-img='["img/emoji/musical-note.png"]'>Music Industry</li>
-          <li data-img='["img/emoji/invader.png"]'>Surveillance and Security</li>
-          <li data-img='["img/emoji/bulb.png"]'>Advertisement</li>
+          <li data-hover data-img='["img/emoji/crystal-ball.png"]'>Artificial Intelligence</li>
+          <li data-hover data-img='["img/emoji/vcr.png"]'>Video Processing</li>
+          <li data-hover data-img='["img/emoji/play.png"]'>Video Solutions</li>
+          <li data-hover data-img='["img/emoji/clipboard.png"]'>Enterprise</li>
+          <li data-hover data-img='["img/emoji/shopping-trolley.png"]'>Retail</li>
+          <li data-hover data-img='["img/emoji/popcorn.png"]'>Streaming</li>
+          <li data-hover data-img='["img/emoji/newspaper.png"]'>News and Media</li>
+          <li data-hover data-img='["img/emoji/chart.png"]'>Data Visualisation</li>
+          <li data-hover data-img='["img/emoji/hugging-face.png"]'>Social Projects</li>
+          <li data-hover data-img='["img/emoji/musical-note.png"]'>Music Industry</li>
+          <li data-hover data-img='["img/emoji/invader.png"]'>Surveillance and Security</li>
+          <li data-hover data-img='["img/emoji/bulb.png"]'>Advertisement</li>
         </ul>
       </section>
       <!-- end industries -->
@@ -129,16 +132,16 @@
           <div class="socials__stuff">
             <h3>The stuff from 2015 and before</h3>
             <ul>
-              <li><a href="https://v6.genn.org/">Previous version of Genn.org</a></li>
-              <li><a href="https://www.behance.net/GennDotOrg/">Behance</a> and <a href="https://dribbble.com/genn">Dribbbbbbble</a></li>
+              <li><a data-hover class="js-imagelink" href="https://v6.genn.org/">Previous version of Genn.org</a></li>
+              <li><a data-hover class="js-imagelink" href="https://www.behance.net/GennDotOrg/">Behance</a> and <a data-hover href="https://dribbble.com/genn">Dribbbbbbble</a></li>
             </ul>
           </div>
           <div class="socials__getme">
             <div class="copy">
-              <a class="js-imagelink" href="https://www.linkedin.com/in/gennosypenko/">LinkedIn</a>
+              <a data-hover class="js-imagelink" href="https://www.linkedin.com/in/gennosypenko/">LinkedIn</a>
             </div>
             <div class="copy">
-              <a class="js-imagelink" href="https://twitter.com/genn_org">Twitter</a>
+              <a data-hover class="js-imagelink" href="https://twitter.com/genn_org">Twitter</a>
             </div>
           </div>
         </div>
