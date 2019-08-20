@@ -18,13 +18,28 @@
 // @import pages/index
 
 
-blockquote
-	padding: 100px 
 .distort 
 	position: absolute
 	pointer-events: none
 	will-change: transform
 	z-index: 10 
+	&__img 
+		opacity: 0
+.cursor__inner 
+	z-index: 9999
+	pointer-events: none
+	position: absolute
+	top: 0
+	left: 0
+	mix-blend-mode: difference
+	border-radius: 50%
 
-.distort__img 
-	opacity: 0
+.cursor__inner--dot 
+	width: 6px
+	height: 6px
+	background: #f50
+
+.cursor__inner--circle 
+	width: 20px
+	height: 20px
+	border: 4px solid #f50
