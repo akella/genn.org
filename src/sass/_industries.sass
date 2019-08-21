@@ -26,6 +26,14 @@
 			margin-bottom: 16px
 			+m
 				+grid(12)
+				margin-left: 0
+				text-indent: -1.3em
+				padding-left: 1.3em
+				line-height: 1.2
+				pointer-events: none
+				&:before
+					content: var(--emoji)
+
 			&:hover
 				background: #fff
 				color: $text

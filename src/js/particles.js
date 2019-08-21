@@ -1,6 +1,8 @@
 import {TimelineMax} from 'gsap';
 import Particle from './Particle';
 
+const touchDevice = ("ontouchstart" in document.documentElement);
+
 function loadImages(paths, whenLoaded) {
     const imgs = [];
     const imgO = []
@@ -96,23 +98,25 @@ export default class Sketch {
     }
 
     mouseOver(){
-    	this.mouseOverItems.forEach(e=>{
-    		e.addEventListener('mouseenter',()=>{
-    			const currentArray = JSON.parse(e.getAttribute('data-img'));
-    			const currentPaths = this.images.filter(v=>{
-    				 return inArray(v.path,currentArray)
-    			});
+        if(!touchDevice) {
+        	this.mouseOverItems.forEach(e=>{
+        		e.addEventListener('mouseenter',()=>{
+        			const currentArray = JSON.parse(e.getAttribute('data-img'));
+        			const currentPaths = this.images.filter(v=>{
+        				 return inArray(v.path,currentArray)
+        			});
 
-    			this.currentImageArray = currentPaths.map(a=>a.img);
-    			this.active = true;
-    			this.time = 0;
-    		})
+        			this.currentImageArray = currentPaths.map(a=>a.img);
+        			this.active = true;
+        			this.time = 0;
+        		})
 
-    		e.addEventListener('mouseout',()=>{
-    			this.active = false;
+        		e.addEventListener('mouseout',()=>{
+        			this.active = false;
 
-    		})
-    	})
+        		})
+        	})
+        }
     }
 
     mouse() {

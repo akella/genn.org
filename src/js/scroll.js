@@ -40,51 +40,57 @@ window.addEventListener("scroll", function (event) {
 
     // Header text change on sections change
 
-    if(scroll<skillsRect.top-bodyRect.top){
-    	if(headerWelcome.innerText!=='Hello, I am Genn')
-            {
-                headerWelcome.innerText='Hello, I am Genn';
+    if(scroll<skillsRect.top-bodyRect.top && headerWelcome.innerText!=='Hello, I am Genn'){
+        headerWelcome.innerText='Hello, I am Genn';
+    } else if(scroll>=skillsRect.top-bodyRect.top && scroll<clientsRect.top-bodyRect.top && headerWelcome.innerText!=='Designing Stuff'){
+        headerWelcome.innerText='Designing Stuff';
+    } else if(scroll>=clientsRect.top-bodyRect.top && scroll<industriesRect.top-bodyRect.top && headerWelcome.innerTex!=='Challenges hungry'){
+        headerWelcome.innerText='Challenges hungry';
+        if(skillsText[0].classList.contains('expose')) {
+            for (let i=0; i<skillsText.length; i++) {
+                skillsText[i].classList.remove('expose');
             }
-    } else if(scroll>=skillsRect.top-bodyRect.top && scroll<clientsRect.top-bodyRect.top){
-    	headerWelcome.innerText='Designing Stuff';
-    } else if(scroll>=clientsRect.top-bodyRect.top && scroll<industriesRect.top-bodyRect.top){
-    	headerWelcome.innerText='Challenges hungry';
-    } else if(scroll>=industriesRect.top-bodyRect.top && scroll<contactRect.top-bodyRect.top){
-    	headerWelcome.innerText='Love to communicate';
-    } else if(scroll>=contactRect.top-bodyRect.top && scroll<sneakPeekRect.bottom-bodyRect.top-window.innerHeight*2) {
+        }
+    } else if(scroll>=industriesRect.top-bodyRect.top && scroll<contactRect.top-bodyRect.top && headerWelcome.innerText!=='Love to communicate'){
+        headerWelcome.innerText='Love to communicate';
+    } else if(scroll>=contactRect.top-bodyRect.top && scroll<sneakPeekRect.bottom-bodyRect.top-window.innerHeight*2 && headerWelcome.innerText!=='Some eye candies') {
     	headerWelcome.innerText='Some eye candies';
-    } else if(scroll>=sneakPeekRect.bottom-bodyRect.top-window.innerHeight*2) {
+    } else if(scroll>=sneakPeekRect.bottom-bodyRect.top-window.innerHeight*2 && headerWelcome.innerText!=='Cheers, Genn') {
         headerWelcome.innerText='Cheers, Genn';
     }
 
-    if(scroll>=skillsRect.bottom+bodyRect.top) {
+    if(scroll>=skillsRect.bottom+bodyRect.top && scroll<skillsRect.top-bodyRect.top) {
         for (let i=0; i<skillsText.length; i++) {
-            skillsText[i].classList.add('expose');
+            if(!skillsText[i].classList.contains('expose'))skillsText[i].classList.add('expose');
         }
     }
 
 
     // Dark mode on and off on scroll
     if(scroll<skillsRect.bottom-bodyRect.top) {
-        document.body.classList.remove('darkside');
-        skills.classList.remove('darkside');
-        clients.classList.remove('darkside');
-        darkMatter.classList.remove('darkside');
+        if(document.body.classList.contains('darkside')) {
+            document.body.classList.remove('darkside');
+            skills.classList.remove('darkside');
+            clients.classList.remove('darkside');
+            darkMatter.classList.remove('darkside');
+        }
     } else if(scroll>=skillsRect.bottom-bodyRect.top && scroll<industriesRect.bottom-bodyRect.top-window.innerHeight){
-        document.body.classList.add('darkside');
-        skills.classList.add('darkside');
-        clients.classList.add('darkside');
-        darkMatter.classList.add('darkside');
+        if(!document.body.classList.contains('darkside')) {
+            document.body.classList.add('darkside');
+            skills.classList.add('darkside');
+            clients.classList.add('darkside');
+            darkMatter.classList.add('darkside');
+        }
     }  else if(scroll>=industriesRect.bottom-bodyRect.top-window.innerHeight) {
-        document.body.classList.remove('darkside');
+        if(document.body.classList.contains('darkside')) {
+            document.body.classList.remove('darkside');
+        }
     }
 
 
     if(scroll>=skillsRect.bottom-bodyRect.top) {
-        darkMatter.classList.add('darkside');
-    } else {
-        darkMatter.classList.remove('darkside');
-    }
+        if(!darkMatter.classList.contains('darkside'))darkMatter.classList.add('darkside');
+    } else if(darkMatter.classList.contains('darkside'))darkMatter.classList.remove('darkside');
     // else if (scroll>=skillsRect.bottom-bodyRect.top){
         // console.log(`${scroll  }r=${  sneakPeekRect.bottom-bodyRect.top-window.innerHeight*2}`);
     // }
