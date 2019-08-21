@@ -4,6 +4,7 @@ const headerWelcome = document.querySelector('.header__text__welcome');
 const logo = document.querySelector('.logo');
 
 const skills = document.querySelector('.skills');
+const skillsText = skills.querySelectorAll('.stripe');
 const clients = document.querySelector('.clients');
 const darkMatter = document.querySelector('.darkmatter');
 
@@ -40,7 +41,10 @@ window.addEventListener("scroll", function (event) {
     // Header text change on sections change
 
     if(scroll<skillsRect.top-bodyRect.top){
-    	headerWelcome.innerText='Hello, I am Genn';;
+    	if(headerWelcome.innerText!=='Hello, I am Genn')
+            {
+                headerWelcome.innerText='Hello, I am Genn';
+            }
     } else if(scroll>=skillsRect.top-bodyRect.top && scroll<clientsRect.top-bodyRect.top){
     	headerWelcome.innerText='Designing Stuff';
     } else if(scroll>=clientsRect.top-bodyRect.top && scroll<industriesRect.top-bodyRect.top){
@@ -53,9 +57,15 @@ window.addEventListener("scroll", function (event) {
         headerWelcome.innerText='Cheers, Genn';
     }
 
+    if(scroll>=skillsRect.bottom+bodyRect.top) {
+        for (let i=0; i<skillsText.length; i++) {
+            skillsText[i].classList.add('expose');
+        }
+    }
+
 
     // Dark mode on and off on scroll
-    if(scroll<skillsRect.bottom-bodyRect.top+52) {
+    if(scroll<skillsRect.bottom-bodyRect.top) {
         document.body.classList.remove('darkside');
         skills.classList.remove('darkside');
         clients.classList.remove('darkside');
@@ -64,11 +74,17 @@ window.addEventListener("scroll", function (event) {
         document.body.classList.add('darkside');
         skills.classList.add('darkside');
         clients.classList.add('darkside');
-         darkMatter.classList.add('darkside');
+        darkMatter.classList.add('darkside');
     }  else if(scroll>=industriesRect.bottom-bodyRect.top-window.innerHeight) {
         document.body.classList.remove('darkside');
     }
 
+
+    if(scroll>=skillsRect.bottom-bodyRect.top) {
+        darkMatter.classList.add('darkside');
+    } else {
+        darkMatter.classList.remove('darkside');
+    }
     // else if (scroll>=skillsRect.bottom-bodyRect.top){
         // console.log(`${scroll  }r=${  sneakPeekRect.bottom-bodyRect.top-window.innerHeight*2}`);
     // }
