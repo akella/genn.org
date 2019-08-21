@@ -26,7 +26,17 @@
 			margin-bottom: 16px
 			+m
 				+grid(12)
-				margin-left: 0
+				margin: 0
+				margin-bottom: 16px
+				text-indent: -1.3em
+				padding-left: 1.3em
+				line-height: 1.2
+				pointer-events: none
+				&:before
+					content: var(--emoji)
+			+p
+				margin: 0
+				margin-bottom: 16px
 				text-indent: -1.3em
 				padding-left: 1.3em
 				line-height: 1.2
