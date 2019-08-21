@@ -1,5 +1,7 @@
 /*eslint-disable*/
-const {body} = document.body;
+const body = document.body;
+
+body.classList.add('no-cursor');
 
 const lerp = (a, b, n) => (1 - n) * a + n * b;
 
