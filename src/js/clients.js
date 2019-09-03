@@ -22,7 +22,7 @@ function ChangeDurationText(){
 
 	setTimeout(()=>{
 		ChangeDurationText();
-	},5000)
+	},2000)
 }
 
 

@@ -43,10 +43,10 @@ class CursorFx {
     }
 
     render() {
-        this.lastMousePos.dot.x = lerp(this.lastMousePos.dot.x, this.mousePos.x - this.bounds.dot.width/2-800, 1);
-        this.lastMousePos.dot.y = lerp(this.lastMousePos.dot.y, this.mousePos.y - this.bounds.dot.height/2+400, 1);
-        this.lastMousePos.circle.x = lerp(this.lastMousePos.circle.x, this.mousePos.x-12-800, 0.15);
-        this.lastMousePos.circle.y = lerp(this.lastMousePos.circle.y, this.mousePos.y-12+400, 0.15);
+        this.lastMousePos.dot.x = lerp(this.lastMousePos.dot.x, this.mousePos.x - 800, 1);
+        this.lastMousePos.dot.y = lerp(this.lastMousePos.dot.y, this.mousePos.y + 400, 1);
+        this.lastMousePos.circle.x = lerp(this.lastMousePos.circle.x, this.mousePos.x-4-800, 0.15);
+        this.lastMousePos.circle.y = lerp(this.lastMousePos.circle.y, this.mousePos.y-4+400, 0.15);
         this.lastScale = lerp(this.lastScale, this.scale, 0.15);
         this.lastOpacity = lerp(this.lastOpacity, this.opacity, 0.1);
         this.DOM.dot.style.transform = `translateX(${(this.lastMousePos.dot.x)}px) translateY(${this.lastMousePos.dot.y}px)`;
@@ -57,10 +57,12 @@ class CursorFx {
 
     enter() {
         this.scale = 1.5;
+        this.DOM.dot.style.background = "#0000ff";
     }
 
     leave() {
         this.scale = 1;
+        this.DOM.dot.style.background = "#ff5500";
     }
 
     click() {

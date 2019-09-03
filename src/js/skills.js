@@ -70,12 +70,12 @@ function ChangeRandomText(){
 		}}
 	)
 	.to(randomSpan,.5,{
-		x: '101%'
+		x: '102%'
 	})
 
 	setTimeout(()=>{
 		ChangeRandomText();
-	},5000)
+	},2000)
 }
 
 
